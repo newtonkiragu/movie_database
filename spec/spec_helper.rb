@@ -3,9 +3,9 @@ require('pg')
 require('actor')
 require('movie')
 
-DB = PG.connect(dbname: 'movie_databasse_test')
+DB = PG.connect(dbname: 'movie_database_test')
 
-Rspec.configure do |config|
+RSpec.configure do |config|
   config.after(:each) do
     DB.exec('DELETE FROM movies *;')
     DB.exec('DELETE FROM actors *;')
